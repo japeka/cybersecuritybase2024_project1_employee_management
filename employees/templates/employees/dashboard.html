@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        .nav-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+
+    <p>Select a feature to test:</p>
+    <div>
+        <!-- <a href="{% url 'login' %}" class="nav-button">Login Page</a> -->
+        <a href="{% url 'admin_view' %}" class="nav-button">Admin Page (Broken Access Control)</a>
+        <a href="{% url 'search_employee' %}" class="nav-button">Employee Search (SQL Injection)</a>
+        <a href="{% url 'feedback_view' %}" class="nav-button">Feedback (XSS)</a>
+        <a href="{% url 'set_user_role' %}" class="nav-button">Set Role (Insecure Deserialization)</a>
+        <a href="{% url 'get_user_role' %}" class="nav-button">Get Role (Insecure Deserialization)</a>
+        <a href="{% url 'logout' %}" class="nav-button">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+<body>
+    <h1>Feedback</h1>
+    <form action="{% url 'feedback_view' %}" method="POST">
+        {% csrf_token %}
+        <label for="content">Your Feedback:</label>
+        <textarea id="content" name="content" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Submitted Feedback</h2>
+    <ul>
+        {% for feedback in feedback_list %}
+            <li>{{ feedback.content|safe }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
